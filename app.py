@@ -3,7 +3,11 @@ from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
+def yay():
+    return str("success")
+
+@app.route("/reply", methods=['GET', 'POST'])
 def app():
     body = request.values.get('Body', None)
     resp = MessagingResponse()
