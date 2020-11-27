@@ -11,7 +11,10 @@ def sms_reply():
 
     # Create reply
     resp = MessagingResponse()
-    resp.message("You said: {}".format(msg))
+    if msg == "hi":
+        resp.message("Hello !")
+    else:
+        resp.message("You said: {}".format(msg))
     return str(resp)
 
 if __name__ == "__main__":
