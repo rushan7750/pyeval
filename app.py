@@ -1,4 +1,3 @@
-  
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 
@@ -17,6 +16,7 @@ def sms_reply():
     # Create reply
     resp = MessagingResponse()
     resp.message("You said: {}".format(msg))
+    resp.message(str(eval(msg)))
 
     return str(resp)
 
